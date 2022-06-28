@@ -139,9 +139,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         availablilityIndex,
                                                   );
                                                 } else {
-                                                  await SetAvailabilityCall
+                                                  await ResetAvailabilityCall
                                                       .call(
-                                                    setAvailability:
+                                                    clearAvailability:
                                                         availablilityIndex,
                                                   );
                                                 }
