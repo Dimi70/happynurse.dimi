@@ -67,3 +67,55 @@ class ResetAvailabilityCall {
     );
   }
 }
+
+class GetUserCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getUser',
+      apiUrl: 'https://jsonblob.com/api/jsonBlob/991329474415181824',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+    );
+  }
+}
+
+class UpdateUserFirstNameCall {
+  static Future<ApiCallResponse> call({
+    String firstName = '',
+  }) {
+    final body = '''
+{
+  "first_name": "${firstName}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateUserFirstName',
+      apiUrl:
+          'https://jsonblob.com/api/jsonBlob/991329474415181824/user/function',
+      callType: ApiCallType.PUT,
+      headers: {},
+      params: {
+        'first_name': firstName,
+      },
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class GetUserFirstNameCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getUserFirstName',
+      apiUrl: 'https://jsonblob.com/api/jsonBlob/991329474415181824/user/id',
+      callType: ApiCallType.GET,
+      headers: {
+        'X-jsonblob': '991329474415181824',
+      },
+      params: {},
+      returnBody: true,
+    );
+  }
+}

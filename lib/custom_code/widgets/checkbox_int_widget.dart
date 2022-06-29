@@ -6,29 +6,28 @@ import '../actions/index.dart'; // Imports custom actions
 import 'package:flutter/material.dart';
 
 // Begin custom widget code
-class CheckboxWidget extends StatefulWidget {
+class CheckboxIntWidget extends StatefulWidget {
   final double width;
   final double height;
 
   final String name;
-  final String checked;
+  final int checked;
 
-  const CheckboxWidget(
+  const CheckboxIntWidget(
       {Key key, this.width, this.height, this.name, this.checked})
       : super(key: key);
 
   @override
-  State<CheckboxWidget> createState() =>
-      _CheckboxWidgetState(name: name, checked: checked);
+  State<CheckboxIntWidget> createState() =>
+      _CheckboxIntWidgetState(name: name, checked: checked);
 }
 
-class _CheckboxWidgetState extends State<CheckboxWidget> {
+class _CheckboxIntWidgetState extends State<CheckboxIntWidget> {
   final String name;
-  final String checked;
+  final int checked;
   bool isChecked;
 
-  _CheckboxWidgetState({this.name, this.checked})
-      : isChecked = checked == "true";
+  _CheckboxIntWidgetState({this.name, this.checked}) : isChecked = checked == 1;
 
   @override
   Widget build(BuildContext context) {

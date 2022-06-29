@@ -133,10 +133,22 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   availablilityItem,
                                                   r'''$.available''',
                                                 )) {
-                                                  await ResetAvailabilityCall
-                                                      .call(
-                                                    clearAvailability:
-                                                        availablilityIndex,
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: Text('TRU'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
                                                   );
                                                 } else {
                                                   await ResetAvailabilityCall
