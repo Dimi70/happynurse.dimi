@@ -6,8 +6,39 @@ import 'package:flutter/material.dart';
 
 // Begin custom action code
 Future<bool> saveProfileForm(BuildContext context) async {
-  return Future<bool>.value(false);
-  //var completer = Completer<bool>();
-  //completer.complete(true);
-  //return completer.future;
+  bool succeed = false;
+
+  await showDialog<bool>(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Profiel opslaan'),
+        content: SingleChildScrollView(
+          child: Column(
+            children: const <Widget>[
+              Text('Welke flow wil je testen?'),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('Goed'),
+            onPressed: () {
+              succeed = true;
+              Navigator.of(context).pop();
+            },
+          ),
+          TextButton(
+            child: const Text('Fout'),
+            onPressed: () {
+              succeed = false;
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+  return Future<bool>.value(succeed);
 }

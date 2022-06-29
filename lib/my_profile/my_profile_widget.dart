@@ -979,8 +979,6 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   return;
                                 }
 
-                                await Future.delayed(
-                                    const Duration(milliseconds: 1000));
                                 success = await actions.saveProfileForm(
                                   context,
                                 );
