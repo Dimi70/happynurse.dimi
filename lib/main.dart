@@ -12,6 +12,8 @@ void main() async {
 
   await FlutterFlowTheme.initialize();
 
+  FFAppState(); // Initialize FFAppState
+
   runApp(MyApp());
 }
 
@@ -87,7 +89,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'Test';
+  String _currentPage = 'MyProfile';
 
   @override
   void initState() {
@@ -98,8 +100,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'Test': TestWidget(),
+      'MyProfile': MyProfileWidget(),
       'Profile': ProfileWidget(),
+      'Test': TestWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -116,10 +119,10 @@ class _NavBarPageState extends State<NavBarPage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_outlined,
-              size: 24,
+              Icons.person_outline,
+              size: 30,
             ),
-            label: 'Home',
+            label: '',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -128,6 +131,14 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 30,
             ),
             label: '',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+              size: 24,
+            ),
+            label: 'Home',
             tooltip: '',
           )
         ],

@@ -119,3 +119,16 @@ class GetUserFirstNameCall {
     );
   }
 }
+
+class GetProfileFormCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getProfileForm',
+      apiUrl: 'https://jsonblob.com/api/jsonBlob/991672230882852864',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+    );
+  }
+}

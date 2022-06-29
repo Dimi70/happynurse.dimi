@@ -27,7 +27,9 @@ dependencies:
     sdk: flutter
   auto_size_text: 3.0.0
   cached_network_image: 3.1.0+1
+  easy_debounce: 2.0.1
   equatable: 2.0.3
+  expandable: 5.0.1
   font_awesome_flutter: 10.1.0
   google_fonts: 2.2.0
   intl: 0.17.0
