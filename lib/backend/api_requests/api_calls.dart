@@ -29,3 +29,49 @@ class GetProfileFormCall {
     );
   }
 }
+
+class TestFormCall {
+  static Future<ApiCallResponse> call({
+    String param1 = '',
+    bool param2,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'testForm',
+      apiUrl: 'www.google.com',
+      callType: ApiCallType.PATCH,
+      headers: {},
+      params: {
+        'param1': param1,
+        'param2': param2,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+    );
+  }
+}
+
+class TestJsonCall {
+  static Future<ApiCallResponse> call({
+    String param1 = '',
+    bool param2,
+  }) {
+    final body = '''
+{
+  "p1": "${param1}",
+  "p2": ${param2}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'testJson',
+      apiUrl: 'www.google.com',
+      callType: ApiCallType.PATCH,
+      headers: {},
+      params: {
+        'param1': param1,
+        'param2': param2,
+      },
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
