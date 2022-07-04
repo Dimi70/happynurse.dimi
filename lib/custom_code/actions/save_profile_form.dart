@@ -5,7 +5,18 @@ import 'index.dart'; // Imports other custom actions
 import 'package:flutter/material.dart';
 
 // Begin custom action code
-Future<bool> saveProfileForm(BuildContext context) async {
+Future<bool> saveProfileForm(
+  BuildContext context,
+  String email,
+  String fullname,
+  String function,
+  String phone,
+  List<String> timeSlots,
+  String sector1,
+  String sector2,
+  String sector3,
+  String sector4,
+) async {
   bool succeed = false;
 
   await showDialog<bool>(

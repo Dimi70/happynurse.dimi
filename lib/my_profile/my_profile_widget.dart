@@ -981,6 +981,15 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
 
                                 success = await actions.saveProfileForm(
                                   context,
+                                  textFieldEmailController?.text ?? '',
+                                  textFieldFullnameController?.text ?? '',
+                                  textFieldFunctionController?.text ?? '',
+                                  textFieldPhoneController?.text ?? '',
+                                  checkboxGroupTimeSlotValues.toList(),
+                                  dropDownFunction1Value,
+                                  dropDownFunction2Value,
+                                  dropDownFunction3Value,
+                                  dropDownFunction4Value,
                                 );
                                 if (success) {
                                   ScaffoldMessenger.of(context).showSnackBar(
