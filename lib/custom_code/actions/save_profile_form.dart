@@ -4,6 +4,8 @@ import '../../flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
 import 'package:flutter/material.dart';
 
+import 'dart:developer' as developer;
+
 // Begin custom action code
 Future<bool> saveProfileForm(
   BuildContext context,
@@ -19,6 +21,15 @@ Future<bool> saveProfileForm(
 ) async {
   bool succeed = false;
 
+  developer.log("*** email = " + email);
+  developer.log("*** fullname = " + fullname);
+  developer.log("*** function = " + function);
+  developer.log("*** timeSlots = " + timeSlots.join(' ,'));
+  developer.log("*** sector1 = " + sector1);
+  developer.log("*** sector2 = " + sector2);
+  developer.log("*** sector3 = " + sector3);
+  developer.log("*** sector4 = " + sector4);
+
   await showDialog<bool>(
     context: context,
     barrierDismissible: false,
@@ -28,7 +39,7 @@ Future<bool> saveProfileForm(
         content: SingleChildScrollView(
           child: Column(
             children: const <Widget>[
-              Text('Welke flow wil je testen?'),
+              Text('Welke flow wil je testen? NIEUW!'),
             ],
           ),
         ),
